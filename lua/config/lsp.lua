@@ -44,6 +44,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set("n", "gI", telescope.lsp_implementations, { desc = "[G]o to [I]mplementations" })
     end
 
+    if client:supports_method("textDocument/documentSymbol") then
+      vim.keymap.set("n", "<leader>ls", telescope.lsp_document_symbols, { desc = "[L]ist [S]ymbols" })
+    end
+
+    if client:supports_method("workspace/symbol") then
+      vim.keymap.set(
+        "n",
+        "<leader>lw",
+        telescope.lsp_dynamic_workspace_symbols,
+        { desc = "[L]ist [W]orkspace Symbols" }
+      )
+    end
+
     if client:supports_method("textDocument/prepareTypeHierarchy") then
       vim.keymap.set("n", "<leader>th", vim.lsp.buf.typehierarchy, { desc = "[T]ype[H]ierarchy" })
     end

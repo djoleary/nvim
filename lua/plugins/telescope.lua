@@ -39,12 +39,16 @@ return {
       vim.keymap.set("n", "<leader>sg", builtins.git_files, { desc = "[S]earch Tracked [G]it Files" })
       vim.keymap.set("n", "<leader>sh", builtins.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sk", builtins.keymaps, { desc = "[S]earch [K]eymaps" })
+      vim.keymap.set("n", "<leader>sm", builtins.marks, { desc = "[S]earch [M]arks" })
       vim.keymap.set("n", "<leader>sn", function()
         builtins.find_files({
           cwd = "~/personal/idle_thoughts",
         })
       end, { desc = "[S]earch [N]otes" })
+      vim.keymap.set("n", "<leader>sq", builtins.quickfix, { desc = "[S]earch [Q]uickfix" })
+      vim.keymap.set("n", "<leader>sr", builtins.registers, { desc = "[S]earch [R]egisters" })
       vim.keymap.set("n", "<leader>ss", builtins.live_grep, { desc = "[S]earch [S]tring" })
+      vim.keymap.set("n", "<leader>st", builtins.spell_suggest, { desc = "[S]earch [T]ypo Correction" })
       vim.keymap.set("n", "<leader>sw", builtins.grep_string, { desc = "[S]earch [W]ord" })
     end,
   },
