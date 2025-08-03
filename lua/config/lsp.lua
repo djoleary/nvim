@@ -1,5 +1,6 @@
 local servers = {
   "clojure_lsp",
+  "gdscript",
   "gopls",
   "helm_ls",
   "intelephense",

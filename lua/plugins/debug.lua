@@ -106,6 +106,11 @@ return {
             args = { "--port", "${port}" },
           },
         },
+        godot = {
+          type = "server",
+          host = "127.0.0.1",
+          port = 6006,
+        },
       },
       configs_by_ft = {
         rust = {
@@ -118,6 +123,14 @@ return {
             end,
             cwd = "${workspaceFolder}",
             stopOnEntry = false,
+          },
+        },
+        gdscript = {
+          {
+            name = "Launch scene",
+            type = "godot",
+            request = "launch",
+            project = "${workspaceFolder}",
           },
         },
       },
