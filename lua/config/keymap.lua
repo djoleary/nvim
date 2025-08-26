@@ -40,3 +40,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Center cursor when jumping up 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Center cursor when jumping down a half-screen" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Center cursor when jumping to the next occurence" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Center cursor when jumping to the previous occurence" })
+
+vim.keymap.set("n", "<C-w><", "5<C-w><", { desc = "Resize split" })
+vim.keymap.set("n", "<C-w>>", "5<C-w>>", { desc = "Resize split" })

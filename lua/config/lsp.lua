@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     if client:supports_method("textDocument/implementation") then
-      vim.keymap.set("n", "gI", telescope.lsp_implementations, { desc = "[G]o to [I]mplementations" })
+      vim.keymap.set("n", "gi", telescope.lsp_implementations, { desc = "[G]o to [I]mplementations" })
     end
 
     if client:supports_method("textDocument/documentSymbol") then
