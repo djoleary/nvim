@@ -1,6 +1,6 @@
 {
-  "cardmarket-php-file-template": {
-    "prefix": "cmphp",
+  "cardmarket-php-class-template": {
+    "prefix": "cm-php-class",
     "body": [
       "<?php",
       "",
@@ -18,7 +18,7 @@
       "\t$0",
       "}"
     ],
-    "description": "Boilerplate for CM PHP Files",
+    "description": "Boilerplate for CM PHP Classes",
     "isFileTemplate": true
   }
 }
