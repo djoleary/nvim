@@ -3,10 +3,13 @@ local servers = {
   "gdscript",
   "gopls",
   "helm_ls",
+  "htmx-lsp",
   "intelephense",
   "lua_ls",
   "nil_ls",
   "ocamllsp",
+  "svelte",
+  "ts_ls",
   "yamlls",
 }
 

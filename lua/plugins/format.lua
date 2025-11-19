@@ -23,7 +23,6 @@ return {
         ocaml = { "ocamlformat" },
         php = { "php_cs_fixer", "pint" },
         rust = { "rustfmt" },
-        yaml = { "yq" },
         blade = { "blade-formatter" },
         ["_"] = { "trim_whitespace", "trim_newlines" },
       },

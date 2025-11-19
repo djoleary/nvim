@@ -13,7 +13,8 @@ return {
             },
           },
           ocaml = {
-            command = { "utop" },
+            command = { "dune", "utop" },
+            format = function(lines) table.insert(lines, ";;\13") return lines end,
           },
         },
         repl_open_cmd = "vertical botright 80 split",
