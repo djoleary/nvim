@@ -24,6 +24,7 @@ return {
         php = { "php_cs_fixer", "pint" },
         rust = { "rustfmt" },
         blade = { "blade-formatter" },
+        sql = { "sleek" },
         ["_"] = { "trim_whitespace", "trim_newlines" },
       },
       default_format_opts = {

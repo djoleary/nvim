@@ -8,6 +8,7 @@ return {
         nix = { "nix" },
         php = { "phpstan" },
         rust = { "clippy" },
+        yaml = { "redocly" },
       },
       linter_args = {
         phpstan = {

@@ -8,6 +8,7 @@ local servers = {
   "lua_ls",
   "nil_ls",
   "ocamllsp",
+  "sqls",
   "svelte",
   "ts_ls",
   "yamlls",
