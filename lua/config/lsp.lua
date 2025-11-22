@@ -25,6 +25,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
       return
     end
 
+    local bufnr = args.buf
+
     local telescope = require("telescope.builtin")
 
     -- Formatting handled by conform.nvim
@@ -64,6 +66,54 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     if client:supports_method("textDocument/prepareTypeHierarchy") then
       vim.keymap.set("n", "<leader>th", vim.lsp.buf.typehierarchy, { desc = "[T]ype[H]ierarchy" })
+    end
+
+    if client:supports_method("textDocument/inlayHint") then
+      local enable_inlay_hints = function()
+        vim.lsp.inlay_hint.enable(true, { bufnr })
+      end
+
+      local disable_inlay_hints = function()
+        vim.lsp.inlay_hint.enable(false, { bufnr })
+      end
+
+      local inlay_hint_group = vim.api.nvim_create_augroup("LspInlayHint", { clear = true })
+      vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold", "BufEnter" }, {
+        buffer = bufnr,
+        group = inlay_hint_group,
+        callback = enable_inlay_hints,
+      })
+      vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+        buffer = bufnr,
+        group = inlay_hint_group,
+        callback = disable_inlay_hints,
+      })
+    end
+
+    if client:supports_method("textDocument/codeLens") then
+      vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "[C]ode [L]ens" })
+
+      local enable_code_lens = function()
+        vim.lsp.codelens.refresh()
+        local lenses = vim.lsp.codelens.get(bufnr)
+        vim.lsp.codelens.display(lenses, bufnr, client.id)
+      end
+
+      local disable_code_lens = function()
+        vim.lsp.codelens.clear(client.id, bufnr)
+      end
+
+      local code_lens_group = vim.api.nvim_create_augroup("LspCodeLens", { clear = true })
+      vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold", "BufEnter" }, {
+        buffer = bufnr,
+        group = code_lens_group,
+        callback = enable_code_lens,
+      })
+      vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+        buffer = bufnr,
+        group = code_lens_group,
+        callback = disable_code_lens,
+      })
     end
   end,
 })

@@ -16,6 +16,9 @@ return {
             command = { "dune", "utop" },
             format = function(lines) table.insert(lines, ";;\13") return lines end,
           },
+          rust = {
+            command = { "irust" },
+          },
         },
         repl_open_cmd = "vertical botright 80 split",
       },
