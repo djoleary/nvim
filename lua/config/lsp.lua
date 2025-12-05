@@ -69,25 +69,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     if client:supports_method("textDocument/inlayHint") then
-      local enable_inlay_hints = function()
-        vim.lsp.inlay_hint.enable(true, { bufnr })
-      end
-
-      local disable_inlay_hints = function()
-        vim.lsp.inlay_hint.enable(false, { bufnr })
-      end
-
-      local inlay_hint_group = vim.api.nvim_create_augroup("LspInlayHint", { clear = true })
-      vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold", "BufEnter" }, {
-        buffer = bufnr,
-        group = inlay_hint_group,
-        callback = enable_inlay_hints,
-      })
-      vim.api.nvim_create_autocmd({ "InsertEnter" }, {
-        buffer = bufnr,
-        group = inlay_hint_group,
-        callback = disable_inlay_hints,
-      })
+      vim.keymap.set("n", "<leader>ih", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end, { desc = "Toggle [I]nlay [H]ints" })
     end
 
     if client:supports_method("textDocument/codeLens") then
