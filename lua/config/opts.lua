@@ -13,7 +13,6 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 
 -- Backup indentation rules
-vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
@@ -53,7 +52,7 @@ vim.wo.signcolumn = "yes"
 vim.opt.termguicolors = true
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = {"menuone","noselect"}
+vim.opt.completeopt = { "menuone", "noselect" }
 
 --
 vim.opt.list = true
