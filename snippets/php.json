@@ -38,6 +38,7 @@
             " * Cardmarket (https://www.cardmarket.com)",
             " *",
             " * @copyright Copyright (c) $CURRENT_YEAR, Sammelkartenmarkt GmbH & Co. KG",
+			" * @internal",
             " */",
             "#[Small]",
             "#[CoversClass(${TM_FILENAME_BASE/^(.*)Test$/$1/}::class)]",

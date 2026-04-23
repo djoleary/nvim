@@ -31,11 +31,11 @@ return {
           },
         },
       },
-      disable_frontmatter = true
+      disable_frontmatter = true,
     },
     config = function(_, opts)
       require("obsidian").setup(opts)
-      vim.opt.conceallevel = 2
+      vim.opt.conceallevel = 1
     end,
   },
 }
