@@ -11,14 +11,7 @@ return {
         dark = "mocha",
       },
       transparent_background = true,
-      integrations = {
-        blink_cmp = true,
-        dap = true,
-        dap_ui = true,
-        harpoon = true,
-        lsp_trouble = true,
-        nvim_surround = true,
-      },
+      auto_integrations = true,
     },
   },
 }

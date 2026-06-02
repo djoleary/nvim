@@ -20,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 -- !! Set in keymaps.lua !!
 
-local colorscheme = "catppuccin"
+local colorscheme = "catppuccin-nvim"
 
 -- Setup lazy.nvim
 require("lazy").setup({
