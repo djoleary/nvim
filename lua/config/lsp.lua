@@ -77,26 +77,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client:supports_method("textDocument/codeLens") then
       vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "[C]ode [L]ens" })
 
-      local enable_code_lens = function()
-        vim.lsp.codelens.refresh()
-        local lenses = vim.lsp.codelens.get(bufnr)
-        vim.lsp.codelens.display(lenses, bufnr, client.id)
-      end
-
-      local disable_code_lens = function()
-        vim.lsp.codelens.clear(client.id, bufnr)
-      end
-
       local code_lens_group = vim.api.nvim_create_augroup("LspCodeLens", { clear = true })
       vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold", "BufEnter" }, {
         buffer = bufnr,
         group = code_lens_group,
-        callback = enable_code_lens,
+        callback = function()
+          vim.lsp.codelens.enable()
+        end,
       })
       vim.api.nvim_create_autocmd({ "InsertEnter" }, {
         buffer = bufnr,
         group = code_lens_group,
-        callback = disable_code_lens,
+        callback = function()
+          vim.lsp.codelens.enable(false)
+        end,
       })
     end
   end,
