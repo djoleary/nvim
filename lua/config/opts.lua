@@ -62,3 +62,6 @@ vim.opt.listchars:append("eol:↴")
 -- Wrap
 vim.opt.linebreak = true
 vim.opt.wrap = false
+
+-- make
+vim.opt.makeprg = "task"
