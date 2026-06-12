@@ -8,7 +8,7 @@ return {
         nix = { "nix" },
         php = { "phpstan" },
         rust = { "clippy" },
-        yaml = { "redocly" },
+        ["yaml.openapi"] = { "redocly" },
       },
       linter_args = {
         phpstan = {
@@ -23,6 +23,12 @@ return {
       local lint = require("lint")
 
       lint.linters_by_ft = opts.linters_by_ft
+
+      vim.filetype.add({
+        pattern = {
+          ["openapi.ya?ml"] = "yaml.openapi",
+        },
+      })
 
       vim.api.nvim_create_autocmd({ "BufWritePost" }, {
         callback = function()
