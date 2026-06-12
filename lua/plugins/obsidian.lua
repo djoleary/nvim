@@ -2,8 +2,6 @@ return {
   {
     "epwalsh/obsidian.nvim",
     version = "*",
-    lazy = true,
-    ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "saghen/blink.cmp",
@@ -15,27 +13,27 @@ return {
         {
           name = "idle_thoughts",
           path = "~/personal/idle_thoughts",
-        },
-        {
-          name = "no-vault",
-          path = function()
-            return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
-          end,
           overrides = {
-            notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'
-            new_notes_location = "current_dir",
-            templates = {
-              folder = vim.NIL,
+            daily_notes = {
+              folder = "daily",
+              date_format = "%Y-%m-%d",
+              default_tags = { "archive/daily" },
+              template = "Daily Template.md",
             },
-            disable_frontmatter = true,
+            templates = {
+              folder = "_templates",
+            },
+            attachments = {
+              img_folder = "_attachments",
+            },
           },
         },
       },
-      disable_frontmatter = true,
     },
     config = function(_, opts)
       require("obsidian").setup(opts)
-      vim.opt.conceallevel = 1
+
+      vim.keymap.set("n", "<leader>sn", "<CMD>ObsidianQuickSwitch<CR>", { desc = "[S]earch [N]otes" })
     end,
   },
 }

@@ -65,3 +65,6 @@ vim.opt.wrap = false
 
 -- make
 vim.opt.makeprg = "task"
+
+-- markdown
+vim.opt.conceallevel = 2
