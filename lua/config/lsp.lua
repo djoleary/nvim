@@ -29,6 +29,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     local telescope = require("telescope.builtin")
 
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+    })
+
     -- Formatting handled by conform.nvim
 
     if client:supports_method("textDocument/codeAction") then
@@ -90,6 +95,28 @@ vim.api.nvim_create_autocmd("LspAttach", {
         group = code_lens_group,
         callback = function()
           vim.lsp.codelens.enable(false)
+        end,
+      })
+    end
+
+    if client:supports_method("textDocument/linkedEditingRange") then
+      vim.lsp.linked_editing_range(true, { client_id = client.id })
+    end
+
+    if client:supports_method("textDocument/documentHighlight") then
+      local document_highlight_group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
+      vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold" }, {
+        buffer = bufnr,
+        group = document_highlight_group,
+        callback = function()
+          vim.lsp.buf.document_highlight()
+        end,
+      })
+      vim.api.nvim_create_autocmd({ "InsertEnter", "CursorMoved" }, {
+        buffer = bufnr,
+        group = document_highlight_group,
+        callback = function()
+          vim.lsp.buf.clear_references()
         end,
       })
     end

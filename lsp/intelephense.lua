@@ -15,6 +15,7 @@ return {
       inlayHints = {
         returnTypes = true,
         parameterTypes = true,
+        parameterName = true,
       },
     },
   },
