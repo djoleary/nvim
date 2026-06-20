@@ -17,6 +17,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 
+--
+vim.opt.virtualedit = "block"
+
 -- Prevent cursor from leaving middle of screen (where possible)
 vim.opt.scrolloff = 999
 
