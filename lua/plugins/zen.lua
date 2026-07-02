@@ -12,7 +12,7 @@ return {
     },
     opts = {
       window = {
-        width = 100,
+        width = 0.4,
       },
       plugins = {
         options = {
