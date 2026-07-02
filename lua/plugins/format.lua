@@ -15,6 +15,7 @@ return {
     opts = {
       formatters_by_ft = {
         clojure = { "cljfmt" },
+        gdscript = { "gdscript-formatter" },
         go = { "goimports", "gofmt", "gofumpt", "golangci-lint" },
         javascript = { "prettier" },
         json = { "jq" },
