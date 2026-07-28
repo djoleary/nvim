@@ -9,6 +9,11 @@ vim.api.nvim_create_autocmd("FileType", {
     else
       -- Start Treesitter
       pcall(vim.treesitter.start, args.buf)
+      -- Enable Indentation
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      -- Enable Folds
+      vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      vim.wo[0][0].foldmethod = "expr"
     end
   end,
 })
