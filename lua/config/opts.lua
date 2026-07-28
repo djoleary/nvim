@@ -73,3 +73,6 @@ vim.opt.conceallevel = 2
 
 -- execute project level configuration, files need to be trusted with `:trust`
 vim.opt.exrc = true
+
+-- folds
+vim.opt.foldlevelstart = 99
