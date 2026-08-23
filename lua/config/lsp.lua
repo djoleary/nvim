@@ -12,6 +12,7 @@ local servers = {
   "svelte",
   "ts_ls",
   "yamlls",
+  "zls",
 }
 
 for _, server in ipairs(servers) do

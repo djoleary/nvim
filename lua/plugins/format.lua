@@ -14,6 +14,7 @@ return {
     ---@type conform.setupOpts
     opts = {
       formatters_by_ft = {
+        blade = { "blade-formatter" },
         clojure = { "cljfmt" },
         gdscript = { "gdscript-formatter" },
         go = { "goimports", "gofmt", "gofumpt", "golangci-lint" },
@@ -24,8 +25,8 @@ return {
         ocaml = { "ocamlformat" },
         php = { "php_cs_fixer", "pint" },
         rust = { "rustfmt" },
-        blade = { "blade-formatter" },
         sql = { "sleek" },
+        zig = { "zigfmt" },
         ["_"] = { "trim_whitespace", "trim_newlines" },
       },
       default_format_opts = {
