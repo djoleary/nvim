@@ -21,4 +21,16 @@ return {
       },
     },
   },
+  {
+    "shortcuts/no-neck-pain.nvim",
+    version = "^3.0.4",
+    opts = {
+      buffers = {
+        scratchPad = { enabled = true },
+        bo = { filetype = "markdown" },
+        left = { scratchPad = { pathToFile = "tmp/scratch.md" } },
+        right = { scratchPad = { pathToFile = "tmp/todo.md" } },
+      },
+    },
+  },
 }
