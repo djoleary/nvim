@@ -10,7 +10,7 @@ local servers = {
   "ocamllsp",
   "sqls",
   "svelte",
-  "ts_ls",
+  "vtsls",
   "yamlls",
   "zls",
 }
