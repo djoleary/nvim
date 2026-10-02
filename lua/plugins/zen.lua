@@ -25,6 +25,7 @@ return {
     "shortcuts/no-neck-pain.nvim",
     version = "^3.0.4",
     opts = {
+      width = 100,
       buffers = {
         scratchPad = { enabled = true },
         bo = { filetype = "markdown" },
