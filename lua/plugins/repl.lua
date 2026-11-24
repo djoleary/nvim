@@ -23,7 +23,7 @@ return {
             command = { "irust" },
           },
           clojure = {
-            command = { "lein", "repl" },
+            command = { "clj" },
           },
         },
         repl_open_cmd = "vertical botright 80 split",

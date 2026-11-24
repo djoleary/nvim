@@ -101,7 +101,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     if client:supports_method("textDocument/linkedEditingRange") then
-      vim.lsp.linked_editing_range(true, { client_id = client.id })
+      vim.lsp.linked_editing_range.enable(true, { client_id = client.id })
     end
 
     if client:supports_method("textDocument/documentHighlight") then
