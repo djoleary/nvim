@@ -14,8 +14,4 @@ return {
   {
     "neovim/nvim-lspconfig",
   },
-  {
-    "mrcjkb/rustaceanvim",
-    ft = "rust",
-  },
 }
