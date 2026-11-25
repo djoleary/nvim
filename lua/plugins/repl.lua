@@ -4,9 +4,8 @@ return {
     opts = {
       config = {
         repl_definition = {
-          php = {
-            command = { "psysh" },
-          },
+          clojure = { command = { "clj" } },
+          go = { command = { "yaegi" } },
           ocaml = {
             command = { "dune", "utop" },
             format = function(lines)
@@ -14,12 +13,8 @@ return {
               return lines
             end,
           },
-          rust = {
-            command = { "irust" },
-          },
-          clojure = {
-            command = { "clj" },
-          },
+          php = { command = { "psysh" } },
+          rust = { command = { "irust" } },
         },
         -- open a horizontal split below the current buffer (same width) with a height of 10 lines
         repl_open_cmd = "horizontal rightbelow 10 split",
