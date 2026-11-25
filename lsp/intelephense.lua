@@ -3,7 +3,7 @@ return {
   settings = {
     intelephense = {
       environment = {
-        phpVersion = "8.3",
+        phpVersion = "8.5",
       },
       codeLens = {
         references = { enable = true },
