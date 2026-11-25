@@ -5,12 +5,7 @@ return {
       config = {
         repl_definition = {
           php = {
-            command = {
-              "psysh",
-              "config.php",
-              "config_server.php",
-              "classAutoLoad.php",
-            },
+            command = { "psysh" },
           },
           ocaml = {
             command = { "dune", "utop" },
