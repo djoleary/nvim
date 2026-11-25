@@ -21,14 +21,19 @@ return {
             command = { "clj" },
           },
         },
-        repl_open_cmd = "vertical botright 80 split",
+        -- open a horizontal split below the current buffer (same width) with a height of 10 lines
+        repl_open_cmd = "horizontal rightbelow 10 split",
       },
       keymaps = {
         toggle_repl = "<leader>rr",
         restart_repl = "<leader>rR",
-        send_line = "<leader>rl",
-        visual_send = "<leader>rv",
+        send_file = "<leader>rf",
+        send_line = "<leader>re",
+        visual_send = "<leader>re",
+        cr = "<leader>r<cr>",
+        interrupt = "<leader>r<space>",
         clear = "<leader>rc",
+        exit = "<leader>rq",
       },
     },
     config = function(_, opts)
